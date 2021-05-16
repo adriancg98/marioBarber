@@ -42,18 +42,8 @@
             <li <?php if ($pagina == "citas") {echo "class = 'active'";}?>><a href="citas.php">Pide tu cita</a></li>
             <li <?php if ($pagina == "contacto") {echo "class = 'active'";}?>><a href="contacto.php">Contacto</a></li>
           </ul>
-          <?php
-            if(!isset($_SESSION['usuario'])){
-              echo  '<form action="login/index.php" class="navbar-form navbar-right">';
-              echo '<button type="submit" class="btn btn-success">Iniciar sesión / Registrarse</button>';
-              echo '</form>';
-            } else {
-              echo '<form action="login/cerrar_sesion.php.php" class="navbar-form navbar-right">';
-              echo '<button type="submit" class="btn btn-success">Cerrar sesión</button>';
-              echo '</form>';
-            }
-          ?>
-            
+          <form action="login/index.php" class="navbar-form navbar-right">
+            <button type="submit" class="btn btn-danger">Cerrar sesión</button>
           </form>
         </div><!--/.navbar-collapse -->
       </div>

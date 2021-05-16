@@ -1,3 +1,5 @@
+<?php include 'PHPMailer'; ?>
+
 <?php
 $nombre = $_POST['nombre'];
 $email = $_POST['email'];
@@ -17,3 +19,5 @@ if ($_POST['submit']) {
         echo 'Falló el envio';
     }
 }
+
+?>
