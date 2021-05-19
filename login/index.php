@@ -36,7 +36,7 @@
                     <!--Login-->
                     <form action="php/login.php" method="POST" class="formulario__login">
                         <h2>Iniciar sesión</h2>
-                        <input type="text" placeholder="Correo electrónico" name="correo">
+                        <input type="text" placeholder="Usuario" name="usuario">
                         <input type="password" placeholder="Contraseña" name="contrasena">
                         <button>Entrar</button>
                     </form>
@@ -47,6 +47,7 @@
                         <input type="text" placeholder="Correo electrónico" name="correo">
                         <input type="text" placeholder="Usuario" name="usuario">
                         <input type="password" placeholder="Contraseña" name="contrasena">
+                        <input type="text" placeholder="Administrador/Usuario" name="rol">
                         <button>Registrarse</button>
                     </form>
                 </div>

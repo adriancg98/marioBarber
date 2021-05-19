@@ -44,13 +44,13 @@
             <li <?php if ($pagina == "gestion") {echo "class = 'active'";}?>><a href="gestion.php">Gestionar peinados</a></li>
           </ul>
           <?php
-            if(!isset($_SESSION['usuario'])){
+            if(empty($_SESSION['usuario'])){
               echo  '<form action="login/index.php" class="navbar-form navbar-right">';
               echo '<button type="submit" class="btn btn-success">Iniciar sesión / Registrarse</button>';
               echo '</form>';
             } else {
               echo '<form action="login/cerrar_sesion.php.php" class="navbar-form navbar-right">';
-              echo '<button type="submit" class="btn btn-success">Cerrar sesión</button>';
+              echo '<button type="submit" class="btn btn-danger">Cerrar sesión</button>';
               echo '</form>';
             }
           ?>

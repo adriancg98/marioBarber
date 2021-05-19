@@ -1,15 +1,19 @@
-<?php include('inc/funciones.php');?>
-
+<?php include('inc/funciones.php');
+  include 'conexion_be.php';
+  session_start();
+?>
 <?php 
 $tituloPagina = "Gestionar";
 $pagina = "gestion";
 include('inc/header.php'); ?>
-      <script>
-        var con_admin = prompt("Introduce la contraseña de administrador");
-        if(con_admin != "administrador123"){
-          window(location= "index.php");
-        }
-      </script>
+  <?php
+    if (empty($_SESSION['usuario'])) {
+      echo '<script>
+        alert("¡Debes ser administrador para entrar aquí!");
+        window(location= "index.php");
+      </script>';
+  }
+  ?>
       
       <hr>
     </div>

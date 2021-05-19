@@ -6,12 +6,13 @@
     $correo = $_POST['correo'];
     $usuario = $_POST['usuario'];
     $contrasena = $_POST['contrasena'];
+    $rol = $_POST['rol'];
 
     //Encriptamiento de la contraseña (Para la BBDD)
     $contrasena = password_hash($contrasena, PASSWORD_DEFAULT);
 
-    $query = "INSERT INTO usuarios(nombre_completo, correo, usuario, contrasena) 
-              VALUES('$nombre', '$correo', '$usuario', '$contrasena')";
+    $query = "INSERT INTO usuarios(nombre_completo, correo, usuario, contrasena, rol) 
+              VALUES('$nombre', '$correo', '$usuario', '$contrasena', '$rol')";
 
     //Verificación para correo no repetido en BBDD
     $verificar_correo = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo = '$correo'");
