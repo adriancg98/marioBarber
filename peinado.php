@@ -29,6 +29,9 @@ include('inc/header.php'); ?>
                 <h1><?php echo $peinado["precio"];?>€</h1>
             </div>
         </div>
+        <div class="row">
+            <a href="peinados.php"><button class="btn btn-danger">Volver</button></a>
+        </div>
       </div>
     </div>
 

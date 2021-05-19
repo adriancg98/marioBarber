@@ -41,6 +41,7 @@
             <li <?php if ($pagina == "peinados") {echo "class = 'active'";}?>><a href="peinados.php">Peinados</a></li>
             <li <?php if ($pagina == "citas") {echo "class = 'active'";}?>><a href="citas.php">Pide tu cita</a></li>
             <li <?php if ($pagina == "contacto") {echo "class = 'active'";}?>><a href="contacto.php">Contacto</a></li>
+            <li <?php if ($pagina == "gestion") {echo "class = 'active'";}?>><a href="gestion.php">Gestionar peinados</a></li>
           </ul>
           <?php
             if(!isset($_SESSION['usuario'])){

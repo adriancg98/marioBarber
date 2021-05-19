@@ -51,6 +51,9 @@
                     </form>
                 </div>
             </div>
+            <div class="row" style="text-align: center;margin-top:80px">
+                    <a href="../index.php"><button>Volver</button></a>
+                </div>
         </main>
         <script src="assets/js/script.js"></script>
     </body>

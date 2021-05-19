@@ -1,12 +1,14 @@
 <head>
   <link href="css/estilo.css" rel="stylesheet">
-</head>
-
-<body>
   <?php
   $tituloPagina = "Contacta con nosotros";
   $pagina = "contacto";
   include('inc/header.php'); ?>
+</head>
+
+<body>
+
+  
 
 
   <!-- Formulario de contacto-->
