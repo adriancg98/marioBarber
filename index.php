@@ -1,5 +1,3 @@
-<?php include('inc/funciones.php'); ?>
-
 <?php
 $tituloPagina = "Hair Style Mario Barber";
 $pagina = "inicio";
@@ -10,7 +8,7 @@ include('inc/header.php'); ?>
 </head>
 
 <body>
-  <!-- Main jumbotron for a primary marketing message or call to action -->
+
   <div class="jumbotron">
     <div class="container">
       <h1>Hair Style Mario Barber</h1>
@@ -25,5 +23,5 @@ include('inc/header.php'); ?>
   </div>
 
   <?php include('inc/footer.php'); ?>
-  
- </body>
+
+</body>
