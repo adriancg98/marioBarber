@@ -2,13 +2,13 @@
 $tituloPagina = "Peinados";
 $pagina = "peinados";
 include('inc/header.php'); 
+include('login/php/conexion_be.php');
 ?>
 
 <!--Peinados-->
 <div class="container">
   <div class="row">
-    <?php
-    $conexion = include('login/php/conexion_be.php');
+    <?php 
       $consulta = $conexion->query("SELECT id, nombre, descripcion, foto, precio FROM peinados");
       $resultados = $consulta->fetch_all(MYSQLI_ASSOC);
     ?>
@@ -28,7 +28,7 @@ include('inc/header.php');
           <tr>
             <td><?php echo $resultado['nombre'] ?></td>
             <td><?php echo $resultado['descripcion'] ?></td>
-            <td><?php echo $resultado['foto'] ?></td>
+            <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($resultado['foto']) .' "/>';?></td>
             <td><?php echo $resultado['precio'] ?></td>
           </tr>
         <?php } ?>
