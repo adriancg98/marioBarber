@@ -26,10 +26,11 @@ include('login/php/conexion_be.php');
         <?php
         foreach ($resultados as $resultado){ ?>
           <tr>
-            <td><?php echo $resultado['nombre'] ?></td>
+            <td align="center"><?php echo "<h1>".$resultado['nombre']."</h1>" ?></td>
             <td><?php echo $resultado['descripcion'] ?></td>
-            <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($resultado['foto']) .' "/>';?></td>
-            <td><?php echo $resultado['precio'] ?></td>
+            <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($resultado['foto']) .' " style="width: 300px; height: 300px"/>';?></td>
+            <td align="center"><?php echo "<h1>".$resultado['precio']."</h1>" ?></td>
+            <!--<td><a href=""><button class="btn btn-danger">Ver más</button></a></td>--> 
           </tr>
         <?php } ?>
       </tbody>

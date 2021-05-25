@@ -13,7 +13,6 @@
       }
       document.formularioDeCambioDeFecha.submit();
     }
-    /* La siguiente funci�n establece, en las listas, los valores de la fecha actual como seleccionados.*/
     function ajustarCampos() {
       document.getElementById("dia").value = "<?php echo ($diaActual); ?>";
       document.getElementById("mes").value = "<?php echo ($mesActual); ?>";

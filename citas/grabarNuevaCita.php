@@ -17,7 +17,7 @@
 // Se monta la consulta para grabar una nueva cita.
   $consulta="INSERT INTO citas (diaCita, horaCita, usuario) VALUES ('$fechaEnCurso','$horaDeCita','".$_POST["usuario"]."');";
 // Se ejecuta la consulta.
-  $hacerConsulta=$conexion->query ($consulta,$conexion);
+  $hacerConsulta=$conexion->query ($consulta);
 // Se liberan recursos y se cierra la base de datos.
   @mysqli_free_result($hacerConsulta);
   mysqli_close($conexion);

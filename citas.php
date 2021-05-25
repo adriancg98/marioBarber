@@ -26,7 +26,7 @@ include('inc/header.php'); ?>
 
       $consulta="SELECT * FROM citas WHERE diacita='".$fechaEnCurso."' ORDER BY horacita;";
 
-      $hacerConsulta=$conexion->query($consulta, $conexion);
+      $hacerConsulta=$conexion->query($consulta);
 
       $numeroDeCitasDelDia=mysqli_num_rows($hacerConsulta);
       echo ("Citas del día: ".$numeroDeCitasDelDia.salto);
@@ -58,12 +58,12 @@ include('inc/header.php'); ?>
           }
           echo ("</table>");
 
-          echo ("<input name='borrarCita' type='button' id='borrarCita' value='Eliminar Cita' onClick='javascript:saltar(\"eliminarCita.php\");'>".salto);
-          echo ("<input name='cambiarCita' type='button' id='cambiarCita' value='Modificar cita' onClick='javascript:saltar(\"cambiarCita.php\");'>".salto);
+          echo ("<input name='borrarCita' type='button' id='borrarCita' value='Eliminar Cita' onClick='javascript:saltar(\"citas/eliminarCita.php\");'>".salto);
+          echo ("<input name='cambiarCita' type='button' id='cambiarCita' value='Modificar cita' onClick='javascript:saltar(\"citas/cambiarCita.php\");'>".salto);
         }
 
-        echo ("<input name='nuevaCita' type='button' id='nuevaCita' value='Agregar cita' onClick='javascript:saltar(\"agregarCita.php\");'>".salto);
-        echo ("<input name='cambiarFecha' type='button' id='cambiarFecha' value='Otro d&iacute;a' onClick='javascript:saltar(\"cambiarFecha.php\");'>".salto);
+        echo ("<input name='nuevaCita' type='button' id='nuevaCita' value='Agregar cita' onClick='javascript:saltar(\"citas/agregarCita.php\");'>".salto);
+        echo ("<input name='cambiarFecha' type='button' id='cambiarFecha' value='Otro d&iacute;a' onClick='javascript:saltar(\"citas/cambiarFecha.php\");'>".salto);
       ?>
     </form>
   </body>

@@ -25,7 +25,9 @@
 </head>
 
 <body>
-
+  <?php
+    session_start();
+  ?>
   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
       <div class="navbar-header">
@@ -57,7 +59,7 @@
         </ul>
         <?php
         if (empty($_SESSION['usuario'])) {
-          echo  '<form action="login/index.php" class="navbar-form navbar-right">';
+          echo '<form action="login/index.php" class="navbar-form navbar-right">';
           echo '<button type="submit" class="btn btn-success">Iniciar sesión / Registrarse</button>';
           echo '</form>';
         } else {

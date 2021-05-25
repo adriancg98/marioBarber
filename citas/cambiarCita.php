@@ -99,7 +99,7 @@ mysqli_close($conexion);
           :
           <select name="minutos" id="minutos">
             <?php
-            for ($i = 0; $i < 51; $i += 10) {
+            for ($i = 0; $i < 51; $i += 30) {
               echo ("<OPTION VALUE='");
               printf("%02s", $i);
               echo ("'>");

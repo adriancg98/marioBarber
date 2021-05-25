@@ -10,7 +10,7 @@ $nombre = $_POST['nombre'];
 $email = $_POST['email'];
 $mensaje = $_POST['mensaje'];
 $titulo = 'Duda';
-$msjCorreo = "Nombre: $nombre\n E-Mail: $email\n Mensaje:\n $mensaje";
+$msjCorreo = "Nombre: $nombre</br> E-Mail: $email</br> Mensaje:</br> $mensaje";
 
 $mail = new PHPMailer();
 
@@ -39,7 +39,7 @@ try {
 
     //Recipients
     $mail->addAddress('mariobarberdaw@gmail.com', 'Administrador');
-    $mail->setFrom('adritopps98@gmail.com', 'Adrian');     //Add a recipient
+    $mail->setFrom('helpmario@gmail.com', 'Dudas');     //Add a recipient
     //$mail->addAddress('ellen@example.com');               //Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');
@@ -51,7 +51,10 @@ try {
     $mail->Body    = $msjCorreo;
 
     $mail->send();
-    echo 'El mensaje se ha enviado correctamente';
+    echo '<script>
+        alert "El mensaje se ha enviado correctamente";
+        windows.location = "contacto.php";
+    </script>';
 } catch (Exception $e) {
     echo "Se ha producido un error: {$mail->ErrorInfo}";
 }

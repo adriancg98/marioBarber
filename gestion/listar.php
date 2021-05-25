@@ -2,16 +2,16 @@
 $tituloPagina = "Gestionar";
 $pagina = "gestion";
 include('../inc/header.php'); 
+include_once "../login/php/conexion_be.php";
 
-if (empty($_SESSION['usuario'])) {
+if ($_SESSION['rol'] = 'Usuario') {
     echo '<script>
         alert("¡Debes ser administrador para entrar aquí!");
         window(location= "../index.php");
       </script>';
 }
 
-$mysqli = include_once "../login/php/conexion_be.php";
-$resultado = $mysqli->query("SELECT id, nombre, descripcion, foto, precio FROM peinados");
+$resultado = $conexion->query("SELECT id, nombre, descripcion, foto, precio FROM peinados");
 $peinados = $resultado->fetch_all(MYSQLI_ASSOC);
 ?>
 <div class="row">
@@ -39,13 +39,13 @@ $peinados = $resultado->fetch_all(MYSQLI_ASSOC);
                         <td><?php echo $peinado["id"] ?></td>
                         <td><?php echo $peinado["nombre"] ?></td>
                         <td><?php echo $peinado["descripcion"] ?></td>
-                        <td><?php echo $peinado["foto"] ?></td>
+                        <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($resultado['foto']) .' "/>';?></td>
                         <td><?php echo $peinado["precio"] ?></td>
                         <td>
-                            <a href="editar.php?id=<?php echo $videojuego["id"] ?>">Editar</a>
+                            <a href="editar.php?id=<?php echo $peinado["id"] ?>">Editar</a>
                         </td>
                         <td>
-                            <a href="eliminar.php?id=<?php echo $videojuego["id"] ?>">Eliminar</a>
+                            <a href="eliminar.php?id=<?php echo $peinado["id"] ?>">Eliminar</a>
                         </td>
                     </tr>
                 <?php } ?>
