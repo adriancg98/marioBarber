@@ -4,7 +4,7 @@ $pagina = "gestion";
 include('../inc/header.php'); 
 include_once "../login/php/conexion_be.php";
 
-if ($_SESSION['rol'] = 'Usuario') {
+if ($_SESSION['rol'] != 'Administrador') {
     echo '<script>
         alert("¡Debes ser administrador para entrar aquí!");
         window(location= "../index.php");
@@ -39,13 +39,13 @@ $peinados = $resultado->fetch_all(MYSQLI_ASSOC);
                         <td><?php echo $peinado["id"] ?></td>
                         <td><?php echo $peinado["nombre"] ?></td>
                         <td><?php echo $peinado["descripcion"] ?></td>
-                        <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($resultado['foto']) .' "/>';?></td>
+                        <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($peinado['foto'])  .' " style="width: 300px; height: 300px"/>';?></td>
                         <td><?php echo $peinado["precio"] ?></td>
                         <td>
-                            <a href="editar.php?id=<?php echo $peinado["id"] ?>">Editar</a>
+                            <a href="editar.php?id=<?php echo $peinado["id"] ?>"><button class="btn btn-warning">Editar</button></a>
                         </td>
                         <td>
-                            <a href="eliminar.php?id=<?php echo $peinado["id"] ?>">Eliminar</a>
+                            <a href="eliminar.php?id=<?php echo $peinado["id"] ?>"><button class="btn btn-danger">Eliminar</button></a>
                         </td>
                     </tr>
                 <?php } ?>

@@ -1,8 +1,8 @@
 <?php
 include_once "../inc/header.php";
-$mysqli = include_once "../login/php/conexion_be.php";
+include_once "../login/php/conexion_be.php";
 $id = $_GET["id"];
-$sentencia = $mysqli->prepare("SELECT id, nombre, descripcion, foto, precio FROM peinados WHERE id = ?");
+$sentencia = $conexion->prepare("SELECT id, nombre, descripcion, foto, precio FROM peinados WHERE id = ?");
 $sentencia->bind_param("i", $id);
 $sentencia->execute();
 $resultado = $sentencia->get_result();

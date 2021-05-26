@@ -1,7 +1,14 @@
 <?php 
 $tituloPagina = "Pide tu cita";
 $pagina = "citas";
-include('inc/header.php'); ?>
+include('inc/header.php'); 
+if (empty($_SESSION['usuario'])) {
+  echo '<script>
+      alert("¡Debes registrarte o iniciar sesión!");
+      window(location= "index.php");
+    </script>';
+}
+?>
 
 <html>
   <head>
