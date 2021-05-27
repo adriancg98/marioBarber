@@ -1,4 +1,5 @@
 <?php
+
 $tituloPagina = "Gestionar";
 $pagina = "gestion";
 include('../inc/header.php'); 

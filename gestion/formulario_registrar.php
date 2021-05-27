@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-12">
         <h1>Registrar peinado</h1>
-        <form action="registrar.php" method="POST">
+        <form action="registrar.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nombre">Nombre</label>
                 <input placeholder="Nombre" class="form-control" type="text" name="nombre" id="nombre" required>

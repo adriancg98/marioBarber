@@ -5,6 +5,7 @@
       function mandar (resultado){
         if (resultado){
           document.formularioNuevaCita.action="grabarNuevaCita.php";
+          alert ("Cita guardada, se enviará un correo cuando se confirme.");
         } else {
            document.formularioNuevaCita.action="index.php";
         }
@@ -30,7 +31,7 @@
         <tr>
           <td><select name="hora" id="hora">
           <?php
-            for ($i=0;$i<24;$i++){
+            for ($i=9;$i<21;$i++){
               echo ("<OPTION VALUE='");
               printf ("%02s",$i);
               echo ("'>");
@@ -39,7 +40,7 @@
             }
           ?>
           </select></td>
-          <td rowspan="3"><textarea name="usuario" cols="50" rows="5" id="usuario"></textarea></td>
+          <td rowspan="3"><input type="date" name="dia" cols="50" id="dia"></input></td>
         </tr>
         <tr>
           <td>Minutos:</td>

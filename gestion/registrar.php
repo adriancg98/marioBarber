@@ -1,13 +1,11 @@
 <?php
-$mysqli = include_once "../login/php/conexion_be.php";
+include_once "../login/php/conexion_be.php";
 $nombre = $_POST["nombre"];
 $descripcion = $_POST["descripcion"];
-$foto = $_POST["foto"];
+$foto = addslashes(file_get_contents($_FILES['foto']['tmp_name']));
+print_r($foto);
 $precio = $_POST["precio"];
-$sentencia = $mysqli->prepare("INSERT INTO peinados
-(nombre, descripcion, foto, precio)
-VALUES
-(?, ?)");
-$sentencia->bind_param("ssss", $nombre, $descripcion, $foto, $precio);
+$sentencia = $conexion->prepare("INSERT INTO peinados (nombre, descripcion, foto, precio) VALUES (?, ?, ?, ?)");
+$sentencia->bind_param("ssbs", $nombre, $descripcion, $foto, $precio);
 $sentencia->execute();
-header("Location: listar.php");
+//header("Location: listar.php");

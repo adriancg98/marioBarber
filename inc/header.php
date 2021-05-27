@@ -12,6 +12,7 @@
   <link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
   <link rel="icon" href="img/favicon.ico" type="image/ico" />
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
   <style>
     body {
       padding-top: 50px;
@@ -19,7 +20,6 @@
     }
   </style>
   <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-  <link rel="stylesheet" href="css/main.css">
 
   <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
@@ -74,3 +74,7 @@
 
     </div>
   </nav>
+  <?php if (isset($_SESSION['mensaje'])) {
+    echo '<div class="alert alert-primary" role="alert">' . $_SESSION['mensaje'] . '</div>';
+    unset($_SESSION['mensaje']);
+  }

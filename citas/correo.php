@@ -1,17 +1,20 @@
 <?php
-session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
+include_once "../login/php/conexion_be.php";
+require '../PHPMailer/Exception.php';
+require '../PHPMailer/PHPMailer.php';
+require '../PHPMailer/SMTP.php';
+$consulta = $conexion->query("SELECT c.id, c.horacita, c.diacita, u.usuario, u.correo FROM citas c INNER JOIN usuarios u ON c.usuario = u.usuario WHERE c.id =" . $_GET['id']);
+$resultados = $consulta->fetch_assoc();
 
-require 'PHPMailer/Exception.php';
-require 'PHPMailer/PHPMailer.php';
-require 'PHPMailer/SMTP.php';
 
-$nombre = $_POST['nombre'];
-$email = $_POST['email'];
-$mensaje = $_POST['mensaje'];
-$titulo = 'Duda';
-$msjCorreo = "Nombre: $nombre</br> E-Mail: $email</br> Mensaje:</br> $mensaje";
+$horaCita = $resultados['horacita'];
+$diaCita = $resultados['diacita'];
+$usuario = $resultados['usuario'];
+$correo = $resultados['correo'];
+$titulo = 'Cita confirmada';
+$msjCorreo = "Su cita del día " . $diaCita . " a las " . $horaCita . " ha sido confirmada";
 
 $mail = new PHPMailer();
 
@@ -39,7 +42,7 @@ try {
                                         
 
     //Recipients
-    $mail->addAddress('mariobarberdaw@gmail.com', 'Administrador');
+    $mail->addAddress($correo, $usuario);
     $mail->setFrom('helpmario@gmail.com', 'Dudas');     //Add a recipient
     //$mail->addAddress('ellen@example.com');               //Name is optional
     //$mail->addReplyTo('info@example.com', 'Information');
@@ -52,8 +55,10 @@ try {
     $mail->Body    = $msjCorreo;
 
     $mail->send();
-    $_SESSION['mensaje'] = "El mensaje se ha enviado correctamente";
-    header("location: contacto.php");
+    echo '<script>
+        alert "La cita ha sido aceptada correctamente";
+        window.location.replace("../citas.php");
+    </script>';
 } catch (Exception $e) {
     echo "Se ha producido un error: {$mail->ErrorInfo}";
 }

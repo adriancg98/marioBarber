@@ -1,6 +1,6 @@
 <?php
 /* Si se intenta acceder sin haber seleccionado una cita, se regresa al index. */
-  if (!isset($_POST["citaSeleccionada"])) header("Location: index.php");
+  if (!isset($_POST["citaSeleccionada"])) header("Location: ../index.php");
 ?>
 <html>
   </head>
