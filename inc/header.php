@@ -53,7 +53,8 @@
           <li <?php if ($pagina == "contacto") {
                 echo "class = 'active'";
               } ?>><a href="contacto.php">Contacto</a></li>
-          <li <?php if ($pagina == "gestion") {
+          <li <?php 
+          if ($pagina == "gestion") {
                 echo "class = 'active'";
               } ?>><a href="gestion/listar.php">Gestionar peinados</a></li>
         </ul>

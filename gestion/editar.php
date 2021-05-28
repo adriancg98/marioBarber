@@ -25,7 +25,7 @@ if (!$peinado) {
             </div>
             <div class="form-group">
                 <label for="descripcion">Descripción</label>
-                <textarea placeholder="Descripción" class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" required><?php echo $videojuego["descripcion"] ?></textarea>
+                <textarea placeholder="Descripción" class="form-control" name="descripcion" id="descripcion" cols="30" rows="10" required><?php echo $peinado["descripcion"] ?></textarea>
             </div>
             <div class="form-group">
                 <label for="foto">Foto</label>

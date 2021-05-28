@@ -5,9 +5,13 @@ include_once "../login/php/conexion_be.php";
 require '../PHPMailer/Exception.php';
 require '../PHPMailer/PHPMailer.php';
 require '../PHPMailer/SMTP.php';
+
+$sentencia = $conexion->prepare("UPDATE citas SET aceptada = 'true' WHERE id =" . $_GET['id']);
+$sentencia->execute();
+
+
 $consulta = $conexion->query("SELECT c.id, c.horacita, c.diacita, u.usuario, u.correo FROM citas c INNER JOIN usuarios u ON c.usuario = u.usuario WHERE c.id =" . $_GET['id']);
 $resultados = $consulta->fetch_assoc();
-
 
 $horaCita = $resultados['horacita'];
 $diaCita = $resultados['diacita'];
@@ -55,10 +59,8 @@ try {
     $mail->Body    = $msjCorreo;
 
     $mail->send();
-    echo '<script>
-        alert "La cita ha sido aceptada correctamente";
-        window.location.replace("../citas.php");
-    </script>';
+    $_SESSION['mensaje'] = "Se ha aceptado la cita correctamente";
+    header("location: ../citas.php");
 } catch (Exception $e) {
     echo "Se ha producido un error: {$mail->ErrorInfo}";
 }

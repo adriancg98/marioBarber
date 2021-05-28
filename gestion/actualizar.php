@@ -1,12 +1,12 @@
 <?php
-$mysqli = include_once "../login/php/conexion_be.php";
+include_once "../login/php/conexion_be.php";
 $id = $_POST["id"];
 $nombre = $_POST["nombre"];
 $descripcion = $_POST["descripcion"];
 $foto = $_POST["foto"];
 $precio = $_POST["precio"];
 
-$sentencia = $mysqli->prepare("UPDATE peinados SET
+$sentencia = $conexion->prepare("UPDATE peinados SET
 nombre = ?,
 descripcion = ?,
 foto = ?,

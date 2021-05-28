@@ -31,7 +31,7 @@ if (empty($_SESSION['usuario'])) {
   // Se incluye el miniscript de tratamiento de fechas
   include("citas/inc/usarBD.php");
   if ($_SESSION['rol'] != 'Administrador') {
-    $consulta = "SELECT * FROM citas WHERE diacita='" . $fechaEnCurso . "' ORDER BY horacita;";
+    $consulta = "SELECT * FROM citas WHERE diacita='" . $fechaEnCurso . "' WHERE usuario =" . $_SESSION['usuario'] . "ORDER BY horacita;";
 
     $hacerConsulta = $conexion->query($consulta);
 
@@ -91,6 +91,7 @@ if (empty($_SESSION['usuario'])) {
         echo ("Citas del día: " . $numeroDeCitasDelDia . salto);
         $consulta = $conexion->query("SELECT id, horacita, diacita, usuario FROM citas ORDER BY diacita, horacita");
         $resultados = $consulta->fetch_all(MYSQLI_ASSOC);
+        
         ?>
 
         <table class="table">
@@ -111,7 +112,12 @@ if (empty($_SESSION['usuario'])) {
                 <td align="center"><?php echo "<h1>" . $resultado['horacita'] . "</h1>" ?></td>
                 <td align="center"><?php echo "<h1>" . $resultado['diacita'] . "</h1>" ?></td>
                 <td align="center"><?php echo "<h1>" . $resultado['usuario'] . "</h1>" ?></td>
-                <td align="center"><a href="citas/correo.php?id=<?php echo $resultado["id"] ?>"><button class="btn btn-success">Aceptar cita</button></a></td>
+                <?php if ($_SESSION['estado'] == false){
+                  echo '<td align="center"><a href="citas/correo.php?id=<?php echo $resultado["id"] ?><button class="btn btn-success">Aceptar cita</button></a></td>';
+                } else{
+                  echo '<h1>ACEPTADA</h1>';
+                  }
+                ?>
               </tr>
             <?php } ?>
           </tbody>
