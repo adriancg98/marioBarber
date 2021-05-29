@@ -56,7 +56,7 @@
           <li <?php 
           if ($pagina == "gestion") {
                 echo "class = 'active'";
-              } ?>><a href="gestion/listar.php">Gestionar peinados</a></li>
+              } ?>><a href="listar.php">Gestionar peinados</a></li>
         </ul>
         <?php
         if (empty($_SESSION['usuario'])) {
