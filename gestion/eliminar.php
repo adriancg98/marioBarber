@@ -7,4 +7,4 @@ $id = $_GET["id"];
 $sentencia = $conexion->prepare("DELETE FROM peinados WHERE id = ?");
 $sentencia->bind_param("i", $id);
 $sentencia->execute();
-header("Location: listar.php");
+header("Location: ../listar.php");

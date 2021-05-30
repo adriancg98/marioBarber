@@ -14,4 +14,4 @@ precio = ?
 WHERE id = ?");
 $sentencia->bind_param("ssiss", $nombre, $descripcion, $id, $foto, $precio);
 $sentencia->execute();
-header("Location: listar.php");
+header("Location: ../listar.php");

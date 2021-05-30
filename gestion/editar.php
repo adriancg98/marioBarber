@@ -29,7 +29,7 @@ if (!$peinado) {
             </div>
             <div class="form-group">
                 <label for="foto">Foto</label>
-                <input value="<?php echo $peinado["foto"] ?>" placeholder="Foto" class="form-control" type="file" name="foto" id="foto" required>
+                <input class="form-control" type="file" name="foto" id="foto" required>
             </div>
             <div class="form-group">
                 <label for="precio">Precio</label>
@@ -37,7 +37,7 @@ if (!$peinado) {
             </div>
             <div class="form-group">
                 <button class="btn btn-success">Guardar</button>
-                <a class="btn btn-warning" href="listar.php">Volver</a>
+                <a class="btn btn-warning" href="../listar.php">Volver</a>
             </div>
         </form>
     </div>

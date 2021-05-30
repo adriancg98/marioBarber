@@ -20,7 +20,7 @@ $peinados = $resultado->fetch_all(MYSQLI_ASSOC);
         <h1>Listado de peinados</h1>
     </div>
     <div class="col-12">
-        <a class="btn btn-success my-2" href="formulario_registrar.php">Agregar nuevo</a>
+        <a class="btn btn-success my-2" href="gestion/formulario_registrar.php">Agregar nuevo</a>
         <table class="table">
             <thead>
                 <tr>
@@ -43,7 +43,7 @@ $peinados = $resultado->fetch_all(MYSQLI_ASSOC);
                         <td><?php echo '<img src="data:image/jpeg;base64,'.base64_encode($peinado['foto'])  .' " style="width: 300px; height: 300px"/>';?></td>
                         <td><?php echo $peinado["precio"] ?></td>
                         <td>
-                            <a href="gestio/editar.php?id=<?php echo $peinado["id"] ?>"><button class="btn btn-warning">Editar</button></a>
+                            <a href="gestion/editar.php?id=<?php echo $peinado["id"] ?>"><button class="btn btn-warning">Editar</button></a>
                         </td>
                         <td>
                             <a href="gestion/eliminar.php?id=<?php echo $peinado["id"] ?>"><button class="btn btn-danger">Eliminar</button></a>
