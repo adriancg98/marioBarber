@@ -15,7 +15,7 @@ if ($_SESSION['rol'] != 'Administrador') {
 $resultado = $conexion->query("SELECT id, nombre, descripcion, foto, precio FROM peinados");
 $peinados = $resultado->fetch_all(MYSQLI_ASSOC);
 ?>
-<div class="row">
+<div class="row" style="margin-left: 20px;">
     <div class="col-12">
         <h1>Listado de peinados</h1>
     </div>

@@ -14,7 +14,7 @@ if (!$peinado) {
 }
 
 ?>
-<div class="row">
+<div class="row" style="margin-left: 20px;">
     <div class="col-12">
         <h1>Actualizar peinado</h1>
         <form action="actualizar.php" method="POST">

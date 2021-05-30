@@ -49,7 +49,11 @@
               } ?>><a href="peinados.php">Peinados</a></li>
           <li <?php if ($pagina == "citas") {
                 echo "class = 'active'";
-              } ?>><a href="citas.php">Pide tu cita</a></li>
+              } ?>><a href="citas.php"> <?php if (empty($_SESSION['rol']) || $_SESSION['rol'] != 'Administrador') {
+                echo "Pide tu cita";
+              } else {
+                echo "Citas";
+              }?></a></li>
           <li <?php if ($pagina == "contacto") {
                 echo "class = 'active'";
               } ?>><a href="contacto.php">Contacto</a></li>
