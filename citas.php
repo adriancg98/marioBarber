@@ -48,7 +48,9 @@ if (empty($_SESSION['usuario'])) {
           <input type="hidden" name="fechaEnCurso" id="fechaEnCurso" value="<?php echo ($fechaEnCurso); ?>">
           <table width="500" border="0" cellspacing="0" cellpadding="0">
             <tr>
-              <th>CITAS</th>
+              <th>Hora cita</th>
+              <th>Día cita</th>
+              <th>Seleccionar</th>
             </tr>
           </table>
           <hr>
