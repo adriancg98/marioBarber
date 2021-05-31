@@ -17,7 +17,7 @@ if (!$peinado) {
 <div class="row" style="margin-left: 20px;">
     <div class="col-12">
         <h1>Actualizar peinado</h1>
-        <form action="actualizar.php" method="POST">
+        <form action="actualizar.php" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="id" value="<?php echo $peinado["id"] ?>">
             <div class="form-group">
                 <label for="nombre">Nombre</label>
@@ -29,7 +29,9 @@ if (!$peinado) {
             </div>
             <div class="form-group">
                 <label for="foto">Foto</label>
-                <input class="form-control" type="file" name="foto" id="foto" required>
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($peinado['foto']);?>" style="width: 300px; height: 300px"/>
+                <input class="form-control" type="file" name="foto" id="foto">
+                
             </div>
             <div class="form-group">
                 <label for="precio">Precio</label>

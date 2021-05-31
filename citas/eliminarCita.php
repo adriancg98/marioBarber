@@ -20,11 +20,10 @@
   <body onLoad="javascript:volver();">
   <?php
 
-    $consulta="DELETE FROM citas WHERE idcita='".$_POST["citaSeleccionada"]."';";
+    $consulta="DELETE FROM citas WHERE id='".$_POST["citaSeleccionada"]."';";
 
-    $hacerConsulta=$conexion->query($consulta, $conexion);
+    $hacerConsulta=$conexion->query($consulta);
 // Se liberan recursos y se cierra la base de datos.
-    @mysqli_free_result ($hacerConsulta);
     mysqli_close ($conexion);
   ?>
   <form action="../citas.php" method="post" name="retorno" id="retorno">

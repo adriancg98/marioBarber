@@ -6,11 +6,12 @@ require '../PHPMailer/Exception.php';
 require '../PHPMailer/PHPMailer.php';
 require '../PHPMailer/SMTP.php';
 
-$sentencia = $conexion->prepare("UPDATE citas SET aceptada = 'true' WHERE id =" . $_GET['id']);
-$sentencia->execute();
+$conexion->query("UPDATE citas SET aceptada = 1 WHERE id =" . $_GET['id']);
+
 
 
 $consulta = $conexion->query("SELECT c.id, c.horacita, c.diacita, u.usuario, u.correo FROM citas c INNER JOIN usuarios u ON c.usuario = u.usuario WHERE c.id =" . $_GET['id']);
+//exit("SELECT c.id, c.horacita, c.diacita, u.usuario, u.correo FROM citas c INNER JOIN usuarios u ON c.usuario = u.usuario WHERE c.id =" . $_GET['id']);
 $resultados = $consulta->fetch_assoc();
 
 $horaCita = $resultados['horacita'];
