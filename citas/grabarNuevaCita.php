@@ -17,7 +17,8 @@
   $horaDeCita=$_POST["hora"].":".$_POST["minutos"];
   print_r($_POST['dia']);
 // Se monta la consulta para grabar una nueva cita.
-  $consulta="INSERT INTO citas (diaCita, horaCita, usuario, aceptada) VALUES ('" . $_POST["dia"] . "','$horaDeCita','" . $_SESSION['usuario'] . "'false');";
+  $consulta="INSERT INTO citas (diaCita, horaCita, usuario, aceptada) VALUES ('" . $_POST["dia"] . "','$horaDeCita','" . $_SESSION['usuario'] . "', 0)";
+
 // Se ejecuta la consulta.
   $hacerConsulta=$conexion->query ($consulta);
 // Se liberan recursos y se cierra la base de datos.

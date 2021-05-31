@@ -59,7 +59,7 @@ if (empty($_SESSION['usuario'])) {
           echo ("<tr><td>" . $cita["horacita"] . "</td>");
           echo ("<td>" . $cita["diacita"] . "</td>");
 
-          echo ("<td><input type='radio' id='citaSeleccionada' name='citaSeleccionada' value='" . $cita["idcita"] . "'>");
+          echo ("<td><input type='radio' id='citaSeleccionada' name='citaSeleccionada' value='" . $cita["id"] . "'>");
           echo ("</td></tr>");
         }
         echo ("</table>");
@@ -102,8 +102,7 @@ if (empty($_SESSION['usuario'])) {
             </thead>
             <tbody>
               <?php
-              foreach ($resultados as $resultado) { 
-              print_r($resultado);?>
+              foreach ($resultados as $resultado) { ?>
                 <tr>
                   <td align="center"><?php echo "<h1>" . $resultado['id'] . "</h1>" ?></td>
                   <td align="center"><?php echo "<h1>" . $resultado['horacita'] . "</h1>" ?></td>
@@ -112,7 +111,7 @@ if (empty($_SESSION['usuario'])) {
                   <?php if ($resultado['aceptada'] == 0) {
                     echo '<td align="center"><a href="citas/correo.php?id=' . $resultado["id"] . '"><button class="btn btn-success">Aceptar cita</button></a></td>';
                   } else {
-                    echo '<h1>ACEPTADA</h1>';
+                    echo '<td>ACEPTADA</td>';
                   }
                   ?>
                 </tr>
