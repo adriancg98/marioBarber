@@ -20,7 +20,7 @@
   // Se incluye el miniscript de tratamiento de fechas
   include("inc/fechas.php");
   // Se muestra la fecha en curso.
-  echo ("CITA PARA EL DÍA: " . $diaActual . " del " . $mesActual . " de " . $annioActual . salto);
+  echo ("Fecha de hoy: " . $diaActual . " del " . $mesActual . " de " . $annioActual . salto);
   ?>
   <div class="container">
     <form action="" method="post" name="formularioNuevaCita" id="formularioNuevaCita">
