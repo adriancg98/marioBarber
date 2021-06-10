@@ -1,6 +1,10 @@
-<?php include_once "../inc/header.php"; ?>
-<div class="row">
-    <div class="col-12">
+<?php 
+$tituloPagina = "Gestionar";
+$pagina = "gestion";
+include_once "../inc/header.php"; 
+$pagina = "registrar" ?>
+<div class="container">
+    <div class="col-8">
         <h1>Registrar peinado</h1>
         <form action="registrar.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">

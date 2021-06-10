@@ -1,4 +1,6 @@
 <?php
+$tituloPagina = "Gestionar";
+$pagina = "gestion";
 include_once "../inc/header.php";
 include_once "../login/php/conexion_be.php";
 $id = $_GET["id"];
