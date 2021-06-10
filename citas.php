@@ -67,9 +67,10 @@ if (empty($_SESSION['usuario'])) {
         echo ("</table>");
 
         echo ("<input name='borrarCita' type='button' id='borrarCita' value='Eliminar Cita' onClick='javascript:saltar(\"citas/eliminarCita.php\");'>" . salto);
+        echo ("<input name='nuevaCita' type='button' id='nuevaCita' value='Agregar cita' onClick='javascript:saltar(\"citas/agregarCita.php\");'>" . salto);
+
       }
 
-      echo ("<input name='nuevaCita' type='button' id='nuevaCita' value='Agregar cita' onClick='javascript:saltar(\"citas/agregarCita.php\");'>" . salto);
         ?>
         </form>
       </div>
